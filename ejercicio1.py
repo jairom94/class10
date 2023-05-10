@@ -1,0 +1,26 @@
+import tkinter
+from tkinter import ttk
+window = tkinter.Tk()
+opcion = tkinter.IntVar()
+def resertear():
+  opcion.set(0)
+  #lblout.config(textvariable=0)
+  
+#print(opcion)
+lbl = ttk.Label(window,text='Escojer una opción:')
+lbl.grid(row=0, column=0, sticky="e")
+r1 = ttk.Radiobutton(window, text="Option 1",value=1, variable=opcion)
+r1.grid(row=1, column=0, sticky="e")
+r2 = ttk.Radiobutton(window, text="Option 2",value=2, variable=opcion)
+r2.grid(row=2, column=0, sticky="e")
+r3 = ttk.Radiobutton(window, text="Option 3",value=3, variable=opcion)
+r3.grid(row=3, column=0, sticky="e")
+r4 = ttk.Radiobutton(window, text="Option 4",value=4, variable=opcion)
+r4.grid(row=4, column=0, sticky="e")
+lblmsg = ttk.Label(window,text='La opcion seleccionada es:')
+lblmsg.grid(row=5, column=0, sticky="e")
+lblout = ttk.Label(window,textvariable=opcion)
+lblout.grid(row=6, column=0, sticky="e")
+btn_reset = ttk.Button(window,text='Reset',command=resertear)
+btn_reset.grid(row=7, column=3, sticky="w")
+window.mainloop()
